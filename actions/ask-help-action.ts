@@ -13,7 +13,7 @@ export const askHelpFormSubmit = async (formData: FormData) => {
 
   const client = await serverClient();
 
-  const { data, error, statusText } = await client.from("seeking_help").insert({
+  const { error, statusText } = await client.from("seeking_help").insert({
     name,
     email,
     details,
@@ -22,5 +22,9 @@ export const askHelpFormSubmit = async (formData: FormData) => {
     need,
   });
 
-  console.log("Form submission result:", { data, error, statusText });
+  if (error) {
+    return { error: `${statusText}: ${error.message}` };
+  }
+
+  return { data: "Success" };
 };
