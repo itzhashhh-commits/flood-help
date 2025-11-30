@@ -25,6 +25,8 @@ import {
 } from "./ui/select";
 import { useMapPositionStore } from "@/store/mapPositionStore";
 import { toast } from "sonner";
+import Image from "next/image";
+import helpImage from "@/assets/icons/help.png";
 
 export default function HelpForm() {
   const { position } = useMapPositionStore();
@@ -57,7 +59,19 @@ export default function HelpForm() {
     <Dialog open={open} onOpenChange={setOpen}>
       {/* you likely already have a trigger somewhere; keep or adjust as needed */}
       <DialogTrigger asChild>
-        <Button onClick={() => setOpen(true)}>Ask for help</Button>
+        <Button
+          className="bg-red-500 flex   font-medium "
+          onClick={() => setOpen(true)}
+        >
+          <Image
+            src={helpImage}
+            alt="Help Icon"
+            className="object-cover"
+            width={24}
+            height={24}
+          />
+          Ask for help
+        </Button>
       </DialogTrigger>
 
       <DialogContent>
