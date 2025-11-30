@@ -14,7 +14,7 @@ export default function BottomBar() {
 
   return (
     <div className="absolute bottom-4 left-1/2 transform z-50 -translate-x-1/2">
-      <div className="h-[50px] bg-card border items-center p-1  rounded-full flex">
+      <div className="h-[50px] bg-card w-auto border items-center p-1  rounded-full flex">
         {links.map((link) => {
           const active = pathname === link.href;
           return (
@@ -22,7 +22,7 @@ export default function BottomBar() {
               key={link.href}
               href={link.href}
               className={[
-                "relative text-sm rounded-full px-5 flex items-center w-full h-full transition-colors",
+                "relative text-sm rounded-full px-5 flex items-center w-auto h-full transition-colors",
                 active
                   ? "font-semibold text-foreground bg-muted "
                   : "text-muted-foreground",

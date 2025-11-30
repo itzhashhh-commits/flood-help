@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
       >
-        <div className="w-full h-screen relative p-2 mb:p-3 flex flex-col ">
+        <div className="w-full h-dvh relative p-2 mb:p-3 flex flex-col ">
           <div className="my-3 mx-3 flex justify-between w-auto items-center">
             <h1 className=" font-semibold text-xl flex-1 ">
               <span className="font-normal">Flood</span> Help Map
